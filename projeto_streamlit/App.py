@@ -61,7 +61,7 @@ tab3_Vendas_Vendedor = df.loc[(
     df['Produto vendido'] == fProduto) &
     (df['Cliente'] == fCliente)
 ]
-tab3_Vendas_Vendedor = tab3_Vendas_Vendedor.groupby('Vendedor').sum().reset_index()
+tab3_Vendas_Vendedor = tab3_Vendas_Vendedor.groupby('Vendedor').sum(numeric_only=True).reset_index()
 tab3_Vendas_Vendedor = tab3_Vendas_Vendedor.drop(columns=['Nº pedido', 'Preço'])
 
 #Vendas por Cliente
@@ -69,7 +69,7 @@ tab4_Venda_Cliente = df.loc[(
     df['Vendedor'] == fVendedor) &
     (df['Produto vendido'] == fProduto)
 ]
-tab4_Venda_Cliente = tab4_Venda_Cliente.groupby('Cliente').sum().reset_index()
+tab4_Venda_Cliente = tab4_Venda_Cliente.groupby('Cliente').sum(numeric_only=True).reset_index()
 
 # Vendas Mensais
 tab5_vendas_mensais = df.loc[(
