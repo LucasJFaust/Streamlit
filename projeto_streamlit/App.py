@@ -47,7 +47,7 @@ tab1_qtde_produto = df.loc[(
     df['Vendedor'] == fVendedor) &
     (df['Cliente'] == fCliente)
 ]
-tab1_qtde_produto = tab1_qtde_produto.groupby('Produto vendido').sum().reset_index()
+tab1_qtde_produto = tab1_qtde_produto.groupby('Produto vendido').sum(numeric_only=True).reset_index()
 
 #Tabela de Vendas e Margem
 tab2_vendas_margem = df.loc[(
