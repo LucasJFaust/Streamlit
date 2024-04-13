@@ -10,7 +10,11 @@ df = pd.read_excel(
     nrows=87,
 )
 
-df
+if st.button("Iniciar"):
+    st.experimental_rerun()
+if st.button("Parar"):
+    st.stop()
+
 
 Hist = alt.Chart(df).mark_bar().encode(
     x = alt.X('x', bin=alt.Bin(step=5)), # com o uso do bin nos agrupamos o eixo x em 5.
@@ -20,3 +24,5 @@ Hist = alt.Chart(df).mark_bar().encode(
 st.subheader('Histograma - Notas de 1000 Alunos')
 
 st.altair_chart(Hist,use_container_width=True)
+
+df
