@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "green"
+backgroundColor = "#1d3557"
+secondaryBackgroundColor = "RGB(61, 183, 228)"
+textColor = "blue"
+font = "sans serif"
